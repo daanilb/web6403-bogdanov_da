@@ -3,8 +3,6 @@
  * @param {*} n
  */
 function isInteger(n) {
-    // n | 0 отбрасывает дробную часть (приводит к 32-битному целому).
-    // Если после этого число не изменилось - дробной части не было
     return typeof n === 'number' && (n | 0) === n;
 }
 
@@ -36,7 +34,6 @@ function sumTo(n) {
  * @param {*} n
  */
 function recSumTo(n) {
-    // База рекурсии: сумма до 0 (или меньше) равна 0
     if (n <= 0) return 0;
     return n + recSumTo(n - 1);
 }
@@ -44,8 +41,11 @@ function recSumTo(n) {
 /**
  * Напишите функцию, считающую факториал заданного числа
  * @param {*} n
- */
+*/
 function factorial(n) {
+    if (!Number.isInteger(n) || n < 0) {
+        throw new RangeError('factorial: n должно быть целым числом >= 0');
+    }
     // 0! = 1! = 1
     if (n <= 1) return 1;
     return n * factorial(n - 1);
@@ -56,9 +56,7 @@ function factorial(n) {
  * @param {*} n
  */
 function isBinary(n) {
-    // У степени двойки в двоичной записи ровно одна единица: 1000...0.
-    // n - 1 даёт 0111...1, поэтому n & (n - 1) обнуляется только у степеней двойки.
-    return n > 0 && (n & (n - 1)) === 0;
+    return Number.isInteger(n) && n > 0 && (n & (n - 1)) === 0;
 }
 
 /**
@@ -66,7 +64,9 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
-    // Итеративно, без лишней рекурсии: F(1) = F(2) = 1
+    if (!Number.isInteger(n) || n < 0) {
+        throw new RangeError('fibonacci: n должно быть целым числом >= 0');
+    }
     let prev = 0;
     let curr = 1;
     for (let i = 1; i < n; i++) {
@@ -116,8 +116,6 @@ function getOperationFn(initialValue, operatorFn) {
  * console.log(generator()); // 9
  */
 function sequence(start = 0, step = 1) {
-    // Каждый вызов sequence создаёт своё замыкание со своим current,
-    // поэтому генераторы не мешают друг другу
     let current = start;
 
     return function generator() {
@@ -142,16 +140,12 @@ function sequence(start = 0, step = 1) {
  * deepEqual({arr: [22, 33], text: 'text'}, {arr: [22, 3], text: 'text2'}) // false
  */
 function deepEqual(firstObject, secondObject) {
-    // Object.is: как ===, но NaN равен NaN (и +0 отличается от -0)
     if (Object.is(firstObject, secondObject)) return true;
 
     const isObject = (value) => typeof value === 'object' && value !== null;
 
-    // Если хотя бы одно значение — примитив (или функция), а Object.is
-    // уже сказал «не равны», то дальше сравнивать нечего
     if (!isObject(firstObject) || !isObject(secondObject)) return false;
 
-    // Массив и обычный объект с теми же ключами — разные вещи
     if (Array.isArray(firstObject) !== Array.isArray(secondObject)) {
         return false;
     }
@@ -160,8 +154,6 @@ function deepEqual(firstObject, secondObject) {
     const secondKeys = Object.keys(secondObject);
     if (firstKeys.length !== secondKeys.length) return false;
 
-    // Порядок ключей не важен: проверяем, что каждый ключ есть во втором
-    // объекте и значения по нему рекурсивно равны
     return firstKeys.every(
         (key) =>
             Object.prototype.hasOwnProperty.call(secondObject, key) &&
