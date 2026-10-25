@@ -25,6 +25,7 @@
 **Папка:** `lab2/`
 
 **Страницы:**
+
 - `index.html` — главная
 - `criminals.html` — реестр преступников
 - `dossier.html` — досье
@@ -38,3 +39,23 @@
 
 **Демо:** https://daanilb.github.io/web6403-bogdanov_da/lab2/
 
+---
+
+## Лабораторная работа №3 — основы JavaScript
+
+**Папка:** `lab3/` (каркас проекта взят из [teach-kirshdv/js-tasks](https://github.com/teach-kirshdv/js-tasks))
+
+**Решения:** `lab3/src/core.js`, тесты — `lab3/src/core.spec.js`.
+
+**Реализованные функции:**
+
+- `isInteger(n)` — проверка на целое число через побитовое ИЛИ (`n | 0`)
+- `even()` — массив чётных чисел от 2 до 20
+- `sumTo(n)` — сумма чисел от 1 до n циклом
+- `recSumTo(n)` — сумма чисел от 1 до n рекурсией
+- `factorial(n)` — факториал
+- `isBinary(n)` — является ли число степенью двойки (`n & (n - 1)`)
+- `fibonacci(n)` — n-е число Фибоначчи (итеративно)
+- `getOperationFn(initialValue, operatorFn)` —  функция с накоплением значения в замыкании
+- `sequence(start, step)` — независимые генераторы арифметической прогрессии
+- `deepEqual(a, b)` — рекурсивное сравнение объектов и массивов по содержимому
