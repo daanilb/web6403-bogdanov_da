@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сообщить сведения - Чернота уголовников</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="case-report.js" defer></script>
+  <script src="report.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">Чернота уголовников</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="criminals.html">Реестр</a>
+        <a href="dossier.html">Досье</a>
+        <a href="report.html" aria-current="page">Сообщить сведения</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page page--form">
+    <h1>Сообщить сведения</h1>
+    <form class="report-form" method="post" action="api/reports">
+      <label class="report-form__field">
+        Номер дела из реестра (1–4)
+        <input name="caseNumber" type="number" required min="1" max="4">
+      </label>
+      <label class="report-form__field">
+        Что тебе известно?
+        <input name="message" type="text" required maxlength="250">
+      </label>
+      <label class="report-form__check">
+        <input name="confirmed" type="checkbox" required>
+        Подтверждаю номер дела
+      </label>
+      <button class="button" type="submit">Отправить сведения</button>
+      <p role="status"></p>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <p>Чернота уголовников - Учебный архив</p>
+  </footer>
+</body>
+</html>
