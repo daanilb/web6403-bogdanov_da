@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реестр - Чернота уголовников</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">Чернота уголовников</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="criminals.html" aria-current="page">Реестр</a>
+        <a href="dossier.html">Досье</a>
+        <a href="report.html">Сообщить сведения</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    <h1>Реестр особо опасных</h1>
+    <p class="page__lead">Уровень опасности указан по шкале от 1 до 10. Открыто досье по делу №1.</p>
+    <section class="case-grid" aria-label="Дела в реестре">
+      <article class="case-card">
+        <p class="case-card__number">Дело №1</p>
+        <h2>Иван Степочкин</h2>
+        <dl class="case-card__details">
+          <div><dt>Обвинение</dt><dd>Серия убийств</dd></div>
+          <div><dt>Статус</dt><dd>В розыске</dd></div>
+          <div><dt>Опасность</dt><dd class="risk risk--high">9 из 10</dd></div>
+        </dl>
+        <a class="case-card__link" href="dossier.html">Открыть досье</a>
+      </article>
+      <article class="case-card">
+        <p class="case-card__number">Дело №2</p>
+        <h2>Чёрный Ранец</h2>
+        <dl class="case-card__details">
+          <div><dt>Обвинение</dt><dd>Мошенничество и отравления</dd></div>
+          <div><dt>Статус</dt><dd>Арестован</dd></div>
+          <div><dt>Опасность</dt><dd class="risk">7 из 10</dd></div>
+        </dl>
+      </article>
+      <article class="case-card">
+        <p class="case-card__number">Дело №3</p>
+        <h2>Профессор Нож</h2>
+        <dl class="case-card__details">
+          <div><dt>Обвинение</dt><dd>Серия нападений</dd></div>
+          <div><dt>Статус</dt><dd>Погиб</dd></div>
+          <div><dt>Опасность</dt><dd class="risk risk--high">10 из 10</dd></div>
+        </dl>
+      </article>
+      <article class="case-card">
+        <p class="case-card__number">Дело №4</p>
+        <h2>Королева</h2>
+        <dl class="case-card__details">
+          <div><dt>Обвинение</dt><dd>Кражи века</dd></div>
+          <div><dt>Статус</dt><dd>В розыске</dd></div>
+          <div><dt>Опасность</dt><dd class="risk">4 из 10</dd></div>
+        </dl>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Чернота уголовников - Учебный архив</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Досье №1 - Чернота уголовников</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">Чернота уголовников</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="criminals.html">Реестр</a>
+        <a href="dossier.html" aria-current="page">Досье</a>
+        <a href="report.html">Сообщить сведения</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    <h1>Досье №1. Иван Степочкин</h1>
+    <div class="dossier">
+      <img class="dossier__photo" src="images/stepochkin.jpg" alt="Архивный снимок Ивана Степочкина">
+      <div>
+        <p class="stamp">Рассекречено</p>
+        <dl class="dossier__details">
+          <div><dt>Имя</dt><dd>Иван Степочкин</dd></div>
+          <div><dt>Возраст</dt><dd>Примерно 20 лет</dd></div>
+          <div><dt>Особые приметы</dt><dd>Всегда носит парашют</dd></div>
+          <div><dt>Статус</dt><dd class="risk risk--high">В розыске</dd></div>
+        </dl>
+        <p>Ни один свидетель не слышал его голоса. Он появлялся в городе поздно вечером и исчезал до приезда полиции.</p>
+        <a href="report.html">Сообщить сведения по делу</a>
+      </div>
+    </div>
+
+    <h2>Хронология дел</h2>
+    <table class="timeline">
+      <thead>
+        <tr>
+          <th scope="col">Год</th>
+          <th scope="col">Место</th>
+          <th scope="col">Событие</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2008</td><td>Старый военный склад</td><td>Первый пожар, первая кровь, улик не найдено</td></tr>
+        <tr><td>2010</td><td>Театр «Орфей»</td><td>Массовое истребление всех участников группы</td></tr>
+        <tr><td>2012</td><td>Мельница</td><td>Последнее известное дело засекречено</td></tr>
+      </tbody>
+    </table>
+  </main>
+  <footer class="site-footer">
+    <p>Чернота уголовников - Учебный архив</p>
+  </footer>
+</body>
+</html>
